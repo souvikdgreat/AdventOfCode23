@@ -1,4 +1,4 @@
-package problems.camelCards;
+package problems.day7;
 
 import problems.InputReader;
 
@@ -21,18 +21,16 @@ public class GamePlay {
         cardRankings.put('A', 13);
         cardRankings.put('K', 12);
         cardRankings.put('Q', 11);
-        cardRankings.put('J', 10);
-        cardRankings.put('T', 9);
-        cardRankings.put('9', 8);
-        cardRankings.put('8', 7);
-        cardRankings.put('7', 6);
-        cardRankings.put('6', 5);
-        cardRankings.put('5', 4);
-        cardRankings.put('4', 3);
-        cardRankings.put('3', 2);
-        cardRankings.put('2', 1);
-
-
+        cardRankings.put('T', 10);
+        cardRankings.put('9', 9);
+        cardRankings.put('8', 8);
+        cardRankings.put('7', 7);
+        cardRankings.put('6', 6);
+        cardRankings.put('5', 5);
+        cardRankings.put('4', 4);
+        cardRankings.put('3', 3);
+        cardRankings.put('2', 2);
+        cardRankings.put('J', 1);
     }
 
 
@@ -81,6 +79,9 @@ public class GamePlay {
                 .stream()
                 .sorted(handTypeAndThenCardOrderComparator)
                 .collect(Collectors.toList());
+
+        System.out.println(result);
+
         BigInteger sum = BigInteger.ZERO;
 
         for (int i = 0; i < result.size(); i++) {

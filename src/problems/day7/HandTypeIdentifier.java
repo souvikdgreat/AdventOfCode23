@@ -1,4 +1,4 @@
-package problems.camelCards;
+package problems.day7;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,15 +21,19 @@ public class HandTypeIdentifier {
     }
 
     public static HandType getHandTypeByMap(Map<Character, Integer> cardCountMap) {
+        int jokerCount = cardCountMap.getOrDefault('J', 0);
+
         int highestCount = cardCountMap.entrySet()
                 .stream()
+                .filter(characterIntegerEntry -> !characterIntegerEntry.getKey().equals('J'))
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
                 .limit(1)
                 .map(Map.Entry::getValue)
-                .findFirst().get();
+                .findFirst().orElse(0) + jokerCount;
 
         int secondHighestCount = cardCountMap.entrySet()
                 .stream()
+                .filter(characterIntegerEntry -> !characterIntegerEntry.getKey().equals('J'))
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
                 .skip(1)
                 .limit(1)
@@ -70,7 +74,15 @@ public class HandTypeIdentifier {
     }
 
     public static void main(String[] args) {
-        Hand hand = new Hand("77788", 765);
-        System.out.println(getHandType(hand));
+//        Hand hand = new Hand("JJJJJ", 765);
+//        System.out.println(getHandType(hand));
+//        hand = new Hand("32T3K", 765);
+//        System.out.println(getHandType(hand));
+//        hand = new Hand("T55J5", 765);
+//        System.out.println(getHandType(hand));
+//        hand = new Hand("KK677", 765);
+//        System.out.println(getHandType(hand));
+//        hand = new Hand("QQQJA", 765);
+//        System.out.println(getHandType(hand));
     }
 }

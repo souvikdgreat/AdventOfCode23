@@ -1,4 +1,6 @@
-package problems;
+package problems.day1;
+
+import problems.InputReader;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package problems;
+package problems.day4;
+
+import problems.InputReader;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -48,15 +50,6 @@ public class ScratchCards {
                 .mapToInt(Integer::intValue)
                 .sum();
 
-    }
-
-
-    private static void putCardsInMap(Map<Integer, Integer> cardNumberWithCount, int index, int value) {
-        if (cardNumberWithCount.containsKey(index)) {
-            cardNumberWithCount.put(index, value);
-        } else {
-            cardNumberWithCount.put(index, value);
-        }
     }
 
     public static int getIntersection(Card card) {

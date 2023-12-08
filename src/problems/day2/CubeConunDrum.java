@@ -1,4 +1,6 @@
-package problems;
+package problems.day2;
+
+import problems.InputReader;
 
 import java.util.*;
 import java.util.stream.Collectors;

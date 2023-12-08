@@ -1,4 +1,4 @@
-package problems.camelCards;
+package problems.day7;
 
 public class Hand {
     String cardsDealt;

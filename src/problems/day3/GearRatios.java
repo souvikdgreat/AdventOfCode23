@@ -122,8 +122,6 @@ public class GearRatios {
 
         IntStream.range(0, inputStrings.size())
                 .forEach(idx -> {
-
-
                     String inputString = inputStrings.get(idx);
                     try {
                         for (int i = 0; i < inputString.length(); i++) {
